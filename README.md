@@ -1,6 +1,6 @@
 ## Forked from [https://github.com/junwang4/bert-sklearn-with-class-weight](https://github.com/junwang4/bert-sklearn-with-class-weight)
 
-Adapted for handling imbalanced classes
+Removed batch normalization from MLP classifier to allow usage when classifying tokens
 
 For detailed usage, check the above link
 
