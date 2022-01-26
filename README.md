@@ -7,7 +7,6 @@ For detailed usage, check the above link
 ## Quick use
 
 ```
-git clone https://github.com/junwang4/bert-sklearn-with-class-weight
-cd bert-sklearn-with-class-weight
+git clone https://github.com/eswc-anon/bert-sklearn-with-class-weight.git
 pip install .
 ```
