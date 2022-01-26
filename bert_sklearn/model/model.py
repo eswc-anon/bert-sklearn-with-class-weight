@@ -7,7 +7,7 @@ from .pytorch_pretrained import BertPreTrainedModel
 def LinearBlock(H1, H2, p):
     return nn.Sequential(
         nn.Linear(H1, H2),
-        nn.BatchNorm1d(H2),
+        #nn.BatchNorm1d(H2),
         nn.ReLU(),
         nn.Dropout(p))
 
@@ -28,9 +28,8 @@ def MLP(D, n, H, K, p):
         print("Defaulting to linear classifier/regressor")
         return nn.Linear(D, K)
     else:
-        print("Using mlp with D=%d,H=%d,K=%d,n=%d"%(D, H, K, n))
-        layers = [nn.BatchNorm1d(D),
-                  LinearBlock(D, H, p)]
+        print("Using mlp with D=%d,H=%d,K=%d,n=%d"%(D, H, K, n))# nn.BatchNorm1d(D),
+        layers = [LinearBlock(D, H, p)]
         for _ in range(n-1):
             layers.append(LinearBlock(H, H, p))
         layers.append(nn.Linear(H, K))
